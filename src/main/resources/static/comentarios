@@ -1,0 +1,38 @@
+@RequestParam es para recibir atributos, pero si uso la clase POJO, en este caso Usuario
+no necesito usarlo
+
+Del mismo modo como viene directamente mapeado al usuario no necesito esto si no uso RequestParam:
+
+		
+//		Usuario usuario = new Usuario();		
+//		usuario.setUsername(username);
+//		usuario.setEmail(email);
+//		usuario.setPassword(password);
+		
+
+
+En @RequestParam si la variable tiene el mismo nombre que el dato que envio, no necesito
+ponerle name=""
+
+
+Por ultimo esto es lo mismo solo que ahora tengo la clase usuario
+
+		model.addAttribute("usuario",usuario);
+// ESTO ES LO MISMO DE ARRIBA PERO COMO AHORA TENGO CLASE USUARIO NO LO USO
+//		model.addAttribute("username", username);
+//		model.addAttribute("password", password);
+//		model.addAttribute("email", email);
+
+@Valid @ModelAttribute("user") ahora puedo usar user en la plantilla html, en vez de usuario por defecto
+
+th:field es de thymeleaf en vez de value con eso puedo usar "{*username}" significa que mapeo de usuario
+th:object en form puedo mapear  el usuario entero al form
+
+* para mapear campos de formulario
+# para expresion con codigo java
+@ rutas URL
+$ extrapolacion de strings
+
+
+SI USO VALIDATORS PUEDO VALIDAR VARIAS COSAS A LA VEZ
+SI USO CUSTOM ANNOTATIONS VALIDO UNA SOLA COSA PERO PUEDO REPLICARLO EN VARIOS LUGARES
