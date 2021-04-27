@@ -1,7 +1,9 @@
 package com.bolsadeideas.springboot.form.app.models.domain;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -44,14 +46,25 @@ public class Usuario {
 	@Min(5)
 	@Max(5000)
 	private Integer cuenta;
-	
+
 	@NotNull
 	@Past
-	//@DateTimeFormat(pattern= "yyyy-MM-dd")
+	// @DateTimeFormat(pattern= "yyyy-MM-dd")
 	private Date fechaNacimiento;
-	
+
+	@NotNull
+	private Pais pais;
+
 	@NotEmpty
-	private String pais;
+	List<Role> roles;
+
+	// ES OPCIONAL ASI QUE NO SE VALIDA
+	private Boolean habilitar;
+
+	@NotEmpty
+	private String genero;
+
+	private String valorSecreto;
 
 	public String getUsername() {
 		return username;
@@ -117,12 +130,44 @@ public class Usuario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getPais() {
+	public Pais getPais() {
 		return pais;
 	}
 
-	public void setPais(String pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
+	}
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public Boolean getHabilitar() {
+		return habilitar;
+	}
+
+	public void setHabilitar(Boolean habilitar) {
+		this.habilitar = habilitar;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getValorSecreto() {
+		return valorSecreto;
+	}
+
+	public void setValorSecreto(String valorSecreto) {
+		this.valorSecreto = valorSecreto;
 	}
 
 }
