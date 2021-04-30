@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title th:text="${titulo}"></title>
-<link
-	rel="stylesheet"
-	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
+
+	<section th:replace="componentes/tiempo :: interceptor"></section>
 	<div class="container">
 		<a th:href="@{/form}" class="btn btn-success my-3">Volver</a>
 		<ul class="list-group my-3">
